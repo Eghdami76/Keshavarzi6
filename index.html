@@ -1,0 +1,264 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محصولات کشاورزی</title>
+<style>
+body{font-family:Tahoma;background:#d6e8c4;padding:10px;margin:0}
+.app{max-width:680px;margin:auto;background:#fffdf6;border-radius:20px;padding:15px}
+.page{display:none}.page.active{display:block}
+.hero{background:linear-gradient(#c8e6a0,#8ec468);border-radius:15px;padding:20px;text-align:center;margin-bottom:12px}
+.hero h1{margin:4px;color:#1e3d10}
+.hero p{font-size:13px;margin:4px}
+.btn{display:flex;width:100%;padding:14px;margin:8px 0;border:none;border-radius:15px;font:bold 15px Tahoma;cursor:pointer;text-align:right;gap:10px}
+.b1{background:#e0f4c8;color:#1e3d10;box-shadow:0 4px 0 #a8c888}
+.b2{background:#d4eaf8;color:#0e3d52;box-shadow:0 4px 0 #88b8d4}
+.b3{background:#ecdaf8;color:#3e1052;box-shadow:0 4px 0 #b898cc}
+.back{background:#eee;border:1px solid #ccc;border-radius:10px;padding:6px 12px;font:bold 13px Tahoma;cursor:pointer;margin-bottom:10px}
+.title{font:bold 15px Tahoma;color:#2b5a1e;margin-bottom:10px}
+.defs{background:#eef7e3;padding:10px;border-radius:12px;font-size:13px;line-height:1.6;margin-bottom:10px}
+.box{background:#f3fae9;padding:10px;border-radius:15px;margin-bottom:12px}
+.box.b{background:#e8f4fc}
+.pool{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;padding:8px;background:#fff;border:2px dashed #bbb;border-radius:10px;min-height:45px;margin-bottom:10px}
+.card{padding:6px 10px;background:#fff;border:2px solid #c9b98a;border-radius:10px;font:bold 12px Tahoma;cursor:pointer}
+.card.sel{background:#fff2c4;border-color:#e6a800}
+.zones{display:flex;gap:5px}
+.zone{flex:1;padding:5px;border-radius:10px;min-height:100px;cursor:pointer;border:3px solid transparent}
+.z1{background:#f0f8e0;border-color:#b8d8a0}
+.z2{background:#fcf0e0;border-color:#e6c9a8}
+.z3{background:#e8f0fa;border-color:#a8c8e0}
+.z4{background:#fff0e8;border-color:#f0c8a8}
+.z5{background:#e8f0fa;border-color:#a8c8e0}
+.zone.act{border-color:#e6a800;background:#fff8dc}
+.zh{font:bold 11px Tahoma;text-align:center;padding:3px;border-radius:6px;margin-bottom:4px}
+.z1 .zh{background:#c4e0a8}.z2 .zh{background:#f0d4b0}.z3 .zh{background:#b0d0e8}
+.z4 .zh{background:#f0b088;color:#5a2a10}.z5 .zh{background:#88b0d4;color:#fff}
+.zc{display:flex;flex-direction:column;gap:3px}
+.zc .card{font-size:11px;padding:4px 6px}
+.msg{text-align:center;font:bold 12px Tahoma;margin-top:6px;min-height:16px;color:#2b5a1e}
+.reset{width:100%;padding:7px;background:#ffe9b0;border:none;border-radius:10px;font:bold 12px Tahoma;cursor:pointer;margin-top:6px}
+.gh{background:#fff;border:2px solid #b8d8a0;border-radius:12px;padding:10px;margin-bottom:8px;cursor:pointer}
+.gh.open{background:#f0fae4}
+.ghh{font:bold 13px Tahoma;color:#1e3d10}
+.ghb{display:none;font-size:13px;line-height:1.8;margin-top:8px;padding-top:8px;border-top:1px dashed #ccc}
+.gh.open .ghb{display:block}
+.ghb ul{padding-right:16px}
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px}
+.gal div{background:#fff;border:2px solid #b8d8a0;border-radius:12px;overflow:hidden;text-align:center}
+.gal svg{display:block;width:100%}
+.gal p{font:bold 11px Tahoma;margin:3px;color:#4a6b3a}
+</style>
+</head>
+<body>
+<div class="app">
+
+<div class="page active" id="pH">
+  <div class="hero">
+    <div style="font-size:50px">🌾🚜🍎</div>
+    <h1>محصولات کشاورزی</h1>
+    <p>از تولید تا مصرف -- درس ششم</p>
+    <p style="font-size:11px;font-style:italic">✏️ طراح: سارا اقدامی مقدم</p>
+  </div>
+  <button class="btn b1" id="b1"><span style="font-size:25px">🌾</span><span><b>بازی ۱: زراعت</b><br><small>غلات، حبوبات، جالیزی</small></span></button>
+  <button class="btn b2" id="b2"><span style="font-size:25px">🌳</span><span><b>بازی ۲: باغداری</b><br><small>گرمسیری و سردسیری</small></span></button>
+  <button class="btn b3" id="b3"><span style="font-size:25px">🍅</span><span><b>کشت گلخانه‌ای</b><br><small>اهمیت و گیاهان</small></span></button>
+</div>
+
+<div class="page" id="pZ">
+  <button class="back" id="bz">▶ بازگشت</button>
+  <div class="title">🌾 زراعت</div>
+  <div class="defs"><b>زراعت:</b> کشت گیاهانی که تا یک سال محصول می‌دهند. سه گروه: غلات، حبوبات، جالیزی.</div>
+  <div class="box">
+    <div style="font:bold 13px Tahoma;margin-bottom:6px">🔎 کارت را انتخاب کن، روی دسته بزن:</div>
+    <div class="pool" id="cP"></div>
+    <div class="zones">
+      <div class="zone z1" data-t="ghalat"><div class="zh">🌾 غلات</div><div class="zc" id="cG"></div></div>
+      <div class="zone z2" data-t="hobubat"><div class="zh">🫘 حبوبات</div><div class="zc" id="cH"></div></div>
+      <div class="zone z3" data-t="jalizi"><div class="zh">🍉 جالیزی</div><div class="zc" id="cJ"></div></div>
+    </div>
+    <div class="msg" id="cM">یک کارت انتخاب کن</div>
+    <button class="reset" id="cR">↺ شروع دوباره</button>
+  </div>
+</div>
+
+<div class="page" id="pB">
+  <button class="back" id="bb">▶ بازگشت</button>
+  <div class="title">🌳 باغداری</div>
+  <div class="defs"><b>باغداری:</b> کشت درختانی که بعد از چند سال محصول می‌دهند. دو دسته: گرمسیری و سردسیری.</div>
+  <div class="box b">
+    <div style="font:bold 13px Tahoma;margin-bottom:6px">🔎 کارت را انتخاب کن، روی دسته بزن:</div>
+    <div class="pool" id="fP"></div>
+    <div class="zones">
+      <div class="zone z4" data-t="garm"><div class="zh">☀️ گرمسیری</div><div class="zc" id="fG"></div></div>
+      <div class="zone z5" data-t="sard"><div class="zh">❄️ سردسیری</div><div class="zc" id="fS"></div></div>
+    </div>
+    <div class="msg" id="fM">یک کارت انتخاب کن</div>
+    <button class="reset" id="fR">↺ شروع دوباره</button>
+  </div>
+</div>
+
+<div class="page" id="pG">
+  <button class="back" id="bg">▶ بازگشت</button>
+  <div class="title">🍅 کشت گلخانه‌ای</div>
+
+  <div class="gal">
+    <div>
+      <svg viewBox="0 0 200 140"><rect width="200" height="140" fill="#c8e6f5"/><circle cx="170" cy="22" r="13" fill="#ffd633"/><ellipse cx="40" cy="22" rx="16" ry="7" fill="#fff" opacity=".85"/><ellipse cx="55" cy="22" rx="11" ry="6" fill="#fff" opacity=".85"/><rect y="110" width="200" height="30" fill="#8ec46a"/><polygon points="28,110 28,62 100,28 172,62 172,110" fill="#c0e8d8" stroke="#5e8c3a" stroke-width="2"/><line x1="62" y1="110" x2="62" y2="48" stroke="#7aa85a"/><line x1="138" y1="110" x2="138" y2="48" stroke="#7aa85a"/><line x1="28" y1="85" x2="172" y2="85" stroke="#7aa85a"/><rect x="90" y="85" width="20" height="25" fill="#88c070" stroke="#4a7c2a"/><circle cx="48" cy="102" r="5" fill="#4a8c2a"/><circle cx="58" cy="99" r="6" fill="#5ea03a"/><circle cx="148" cy="102" r="5" fill="#4a8c2a"/><circle cx="158" cy="100" r="6" fill="#5ea03a"/></svg>
+      <p>🏠 نمای بیرونی</p>
+    </div>
+    <div>
+      <svg viewBox="0 0 200 140"><rect width="200" height="140" fill="#d8eef5"/><polygon points="0,0 100,0 100,26 0,26" fill="#d0eaf0" opacity="0.7"/><line x1="0" y1="26" x2="200" y2="26" stroke="#7aa85a" stroke-width="1.5"/><line x1="25" y1="0" x2="25" y2="26" stroke="#7aa85a"/><line x1="55" y1="0" x2="55" y2="26" stroke="#7aa85a"/><line x1="85" y1="0" x2="85" y2="26" stroke="#7aa85a"/><line x1="115" y1="0" x2="115" y2="26" stroke="#7aa85a"/><line x1="145" y1="0" x2="145" y2="26" stroke="#7aa85a"/><line x1="175" y1="0" x2="175" y2="26" stroke="#7aa85a"/><rect x="0" y="26" width="4" height="114" fill="#7aa85a"/><rect x="196" y="26" width="4" height="114" fill="#7aa85a"/><line x1="4" y1="38" x2="196" y2="38" stroke="#555" stroke-width="1.2"/><line x1="4" y1="56" x2="196" y2="56" stroke="#555"/><line x1="4" y1="74" x2="196" y2="74" stroke="#555"/><line x1="35" y1="38" x2="35" y2="105" stroke="#b0a080" stroke-width="0.8" stroke-dasharray="1,1"/><line x1="75" y1="38" x2="75" y2="105" stroke="#b0a080" stroke-width="0.8" stroke-dasharray="1,1"/><line x1="115" y1="38" x2="115" y2="105" stroke="#b0a080" stroke-width="0.8" stroke-dasharray="1,1"/><line x1="155" y1="38" x2="155" y2="105" stroke="#b0a080" stroke-width="0.8" stroke-dasharray="1,1"/><g><line x1="35" y1="105" x2="35" y2="48" stroke="#3a6a20" stroke-width="2"/><ellipse cx="28" cy="98" rx="7" ry="4" fill="#4a8c2a" transform="rotate(-25 28 98)"/><ellipse cx="42" cy="98" rx="7" ry="4" fill="#4a8c2a" transform="rotate(25 42 98)"/><ellipse cx="28" cy="84" rx="7" ry="4" fill="#5ea03a" transform="rotate(-20 28 84)"/><ellipse cx="42" cy="84" rx="7" ry="4" fill="#5ea03a" transform="rotate(20 42 84)"/><ellipse cx="35" cy="60" rx="6" ry="3.5" fill="#5ea03a"/><circle cx="30" cy="84" r="3.2" fill="#e84a4a"/><circle cx="40" cy="84" r="3.2" fill="#e84a4a"/><circle cx="35" cy="80" r="3.2" fill="#e84a4a"/><circle cx="30" cy="72" r="3.2" fill="#f05a4a"/><circle cx="40" cy="72" r="3.2" fill="#f05a4a"/><circle cx="35" cy="68" r="3.2" fill="#f05a4a"/></g><g><line x1="75" y1="105" x2="75" y2="48" stroke="#3a6a20" stroke-width="2"/><ellipse cx="68" cy="98" rx="7" ry="4" fill="#4a8c2a" transform="rotate(-25 68 98)"/><ellipse cx="82" cy="98" rx="7" ry="4" fill="#4a8c2a" transform="rotate(25 82 98)"/><ellipse cx="68" cy="84" rx="7" ry="4" fill="#5ea03a" transform="rotate(-20 68 84)"/><ellipse cx="82" cy="84" rx="7" ry="4" fill="#5ea03a" transform="rotate(20 82 84)"/><ellipse cx="75" cy="60" rx="6" ry="3.5" fill="#5ea03a"/><circle cx="70" cy="84" r="3.2" fill="#e84a4a"/><circle cx="80" cy="84" r="3.2" fill="#e84a4a"/><circle cx="75" cy="80" r="3.2" fill="#e84a4a"/><circle cx="70" cy="72" r="3.2" fill="#f05a4a"/><circle cx="80" cy="72" r="3.2" fill="#f05a4a"/><circle cx="75" cy="68" r="3.2" fill="#f05a4a"/></g><g><line x1="115" y1="105" x2="115" y2="48" stroke="#3a6a20" stroke-width="2"/><ellipse cx="108" cy="98" rx="7" ry="4" fill="#4a8c2a" transform="rotate(-25 108 98)"/><ellipse cx="122" cy="98" rx="7" ry="4" fill="#4a8c2a" transform="rotate(25 122 98)"/><ellipse cx="108" cy="84" rx="7" ry="4" fill="#5ea03a" transform="rotate(-20 108 84)"/><ellipse cx="122" cy="84" rx="7" ry="4" fill="#5ea03a" transform="rotate(20 122 84)"/><ellipse cx="115" cy="60" rx="6" ry="3.5" fill="#5ea03a"/><circle cx="110" cy="84" r="3.2" fill="#e84a4a"/><circle cx="120" cy="84" r="3.2" fill="#e84a4a"/><circle cx="115" cy="80" r="3.2" fill="#e84a4a"/><circle cx="110" cy="72" r="3.2" fill="#f05a4a"/><circle cx="120" cy="72" r="3.2" fill="#f05a4a"/><circle cx="115" cy="68" r="3.2" fill="#f05a4a"/></g><g><line x1="155" y1="105" x2="155" y2="48" stroke="#3a6a20" stroke-width="2"/><ellipse cx="148" cy="98" rx="7" ry="4" fill="#4a8c2a" transform="rotate(-25 148 98)"/><ellipse cx="162" cy="98" rx="7" ry="4" fill="#4a8c2a" transform="rotate(25 162 98)"/><ellipse cx="148" cy="84" rx="7" ry="4" fill="#5ea03a" transform="rotate(-20 148 84)"/><ellipse cx="162" cy="84" rx="7" ry="4" fill="#5ea03a" transform="rotate(20 162 84)"/><ellipse cx="155" cy="60" rx="6" ry="3.5" fill="#5ea03a"/><circle cx="150" cy="84" r="3.2" fill="#e84a4a"/><circle cx="160" cy="84" r="3.2" fill="#e84a4a"/><circle cx="155" cy="80" r="3.2" fill="#e84a4a"/><circle cx="150" cy="72" r="3.2" fill="#f05a4a"/><circle cx="160" cy="72" r="3.2" fill="#f05a4a"/><circle cx="155" cy="68" r="3.2" fill="#f05a4a"/></g><rect y="106" width="200" height="34" fill="#8a5230"/><ellipse cx="35" cy="110" rx="15" ry="3" fill="#6a4020" opacity="0.6"/><ellipse cx="75" cy="110" rx="15" ry="3" fill="#6a4020" opacity="0.6"/><ellipse cx="115" cy="110" rx="15" ry="3" fill="#6a4020" opacity="0.6"/><ellipse cx="155" cy="110" rx="15" ry="3" fill="#6a4020" opacity="0.6"/><line x1="0" y1="104" x2="200" y2="104" stroke="#3a5a70" stroke-width="1.5"/></svg>
+      <p>🌱 داخل گلخانه -- گوجه</p>
+    </div>
+  </div>
+
+  <div class="defs"><b>گلخانه:</b> محیط سرپوشیده که دما، رطوبت و نور در آن تنظیم می‌شود.</div>
+
+  <div class="gh">
+    <div class="ghh">⭐ اهمیت و فایده‌های گلخانه</div>
+    <div class="ghb"><ul>
+      <li>تولید در همه فصل‌ها</li>
+      <li>صرفه‌جویی در آب</li>
+      <li>محافظت از سرما، باد و آفات</li>
+      <li>افزایش کیفیت و کمیت محصول</li>
+      <li>کاهش مصرف سموم</li>
+      <li>اشتغال‌زایی</li>
+      <li>صادرات و درآمد</li>
+      <li>استفاده از زمین کم</li>
+    </ul></div>
+  </div>
+  <div class="gh">
+    <div class="ghh">🥬 گیاهان گلخانه‌ای</div>
+    <div class="ghb"><ul>
+      <li>سبزیجات: خیار، گوجه، فلفل، بادمجان، کاهو</li>
+      <li>توت‌فرنگی</li>
+      <li>گیاهان زینتی</li>
+      <li>نهال‌ها</li>
+      <li>گیاهان دارویی</li>
+      <li>قارچ خوراکی</li>
+      <li>میوه‌های خاص: طالبی، هندوانه</li>
+    </ul></div>
+  </div>
+</div>
+
+</div>
+<script>
+var pgs={pH:document.getElementById('pH'),pZ:document.getElementById('pZ'),pB:document.getElementById('pB'),pG:document.getElementById('pG')};
+function shw(n){for(var k in pgs){pgs[k].classList.remove('active');}pgs[n].classList.add('active');window.scrollTo(0,0);}
+document.getElementById('b1').onclick=function(){shw('pZ');};
+document.getElementById('b2').onclick=function(){shw('pB');};
+document.getElementById('b3').onclick=function(){shw('pG');};
+document.getElementById('bz').onclick=function(){shw('pH');};
+document.getElementById('bb').onclick=function(){shw('pH');};
+document.getElementById('bg').onclick=function(){shw('pH');};
+var ghCards=document.querySelectorAll('.gh');
+for(var i=0;i<ghCards.length;i++){ghCards[i].onclick=function(){this.classList.toggle('open');};}
+var cD={gandom:'🌾 گندم',jo:'🌾 جو',berenj:'🌾 برنج',zorat:'🌽 ذرت',nokhod:'🫘 نخود',lubia:'🫘 لوبیا',adas:'🫘 عدس',masha:'🫘 ماش',hendevane:'🍉 هندوانه',talebi:'🍈 طالبی',khiar:'🥒 خیار',kadoo:'🎃 کدو'};
+var cT={gandom:'ghalat',jo:'ghalat',berenj:'ghalat',zorat:'ghalat',nokhod:'hobubat',lubia:'hobubat',adas:'hobubat',masha:'hobubat',hendevane:'jalizi',talebi:'jalizi',khiar:'jalizi',kadoo:'jalizi'};
+var cS={gandom:'گندم',jo:'جو',berenj:'برنج',zorat:'ذرت',nokhod:'نخود',lubia:'لوبیا',adas:'عدس',masha:'ماش',hendevane:'هندوانه',talebi:'طالبی',khiar:'خیار',kadoo:'کدو'};
+var cP=document.getElementById('cP'),cG=document.getElementById('cG'),cH=document.getElementById('cH'),cJ=document.getElementById('cJ'),cM=document.getElementById('cM');
+var selC=null;
+function updP(p){if(p.querySelectorAll('.card').length===0)p.classList.add('empty');else p.classList.remove('empty');}
+function addC(id){
+  var c=document.createElement('div');c.className='card';c.dataset.v=id;c.textContent=cD[id];
+  c.onclick=function(){
+    if(selC)selC.classList.remove('sel');
+    if(selC===c){selC=null;cM.textContent='یک کارت انتخاب کن';return;}
+    selC=c;c.classList.add('sel');
+    var zs=document.querySelectorAll('#pZ .zone');
+    for(var i=0;i<zs.length;i++){zs[i].classList.add('act');}
+    cM.textContent='حالا روی دسته درست بزن';
+  };
+  cP.appendChild(c);
+}
+function mkC(id){
+  var c=document.createElement('div');c.className='card';c.dataset.v=id;
+  c.innerHTML=cD[id]+' <span style="color:red;cursor:pointer">↺</span>';
+  c.querySelector('span').onclick=function(e){e.stopPropagation();c.remove();addC(id);updP(cP);cM.textContent='کارت برگشت';};
+  return c;
+}
+var zs=document.querySelectorAll('#pZ .zone');
+for(var i=0;i<zs.length;i++){
+  (function(z){
+    z.onclick=function(e){
+      if(!selC){cM.textContent='اول یک کارت انتخاب کن';return;}
+      if(e.target.closest('.card'))return;
+      var id=selC.dataset.v;
+      if(cT[id]!==z.dataset.t){cM.textContent='❌ اشتباه!';cM.style.color='#a13d3d';return;}
+      var zc=z.querySelector('.zc');
+      selC.remove();zc.appendChild(mkC(id));
+      selC=null;
+      var zs2=document.querySelectorAll('#pZ .zone');
+      for(var j=0;j<zs2.length;j++){zs2[j].classList.remove('act');}
+      updP(cP);
+      cM.textContent='✅ «'+cS[id]+'» درست بود';
+      cM.style.color='#2b7a0b';
+      var total=cG.querySelectorAll('.card').length+cH.querySelectorAll('.card').length+cJ.querySelectorAll('.card').length;
+      if(total===12){cM.textContent='🎉 آفرین! همه درست شد';}
+    };
+  })(zs[i]);
+}
+function resetC(){
+  cG.innerHTML='';cH.innerHTML='';cJ.innerHTML='';cP.innerHTML='';
+  var arr=['gandom','jo','berenj','zorat','nokhod','lubia','adas','masha','hendevane','talebi','khiar','kadoo'];
+  for(var i=0;i<arr.length;i++){addC(arr[i]);}
+  updP(cP);selC=null;cM.textContent='یک کارت انتخاب کن';cM.style.color='#2b5a1e';
+}
+document.getElementById('cR').onclick=resetC;
+resetC();
+var fD={moz:'🍌 موز',ananas:'🍍 آناناس',khorma:'🌴 خرما',anbe:'🥭 انبه',sib:'🍎 سیب',golabi:'🍐 گلابی',holu:'🍑 هلو',gilas:'🍒 گیلاس'};
+var fT={moz:'garm',ananas:'garm',khorma:'garm',anbe:'garm',sib:'sard',golabi:'sard',holu:'sard',gilas:'sard'};
+var fS={moz:'موز',ananas:'آناناس',khorma:'خرما',anbe:'انبه',sib:'سیب',golabi:'گلابی',holu:'هلو',gilas:'گیلاس'};
+var fP=document.getElementById('fP'),fG=document.getElementById('fG'),fS_=document.getElementById('fS'),fM=document.getElementById('fM');
+var selF=null;
+function addF(id){
+  var c=document.createElement('div');c.className='card';c.dataset.v=id;c.textContent=fD[id];
+  c.onclick=function(){
+    if(selF)selF.classList.remove('sel');
+    if(selF===c){selF=null;fM.textContent='یک کارت انتخاب کن';return;}
+    selF=c;c.classList.add('sel');
+    var zs=document.querySelectorAll('#pB .zone');
+    for(var i=0;i<zs.length;i++){zs[i].classList.add('act');}
+    fM.textContent='حالا روی دسته درست بزن';
+  };
+  fP.appendChild(c);
+}
+function mkF(id){
+  var c=document.createElement('div');c.className='card';c.dataset.v=id;
+  c.innerHTML=fD[id]+' <span style="color:red;cursor:pointer">↺</span>';
+  c.querySelector('span').onclick=function(e){e.stopPropagation();c.remove();addF(id);updP(fP);fM.textContent='کارت برگشت';};
+  return c;
+}
+var zsF=document.querySelectorAll('#pB .zone');
+for(var i=0;i<zsF.length;i++){
+  (function(z){
+    z.onclick=function(e){
+      if(!selF){fM.textContent='اول یک کارت انتخاب کن';return;}
+      if(e.target.closest('.card'))return;
+      var id=selF.dataset.v;
+      if(fT[id]!==z.dataset.t){fM.textContent='❌ اشتباه!';fM.style.color='#a13d3d';return;}
+      var zc=z.querySelector('.zc');
+      selF.remove();zc.appendChild(mkF(id));
+      selF=null;
+      var zs2=document.querySelectorAll('#pB .zone');
+      for(var j=0;j<zs2.length;j++){zs2[j].classList.remove('act');}
+      updP(fP);
+      fM.textContent='✅ «'+fS[id]+'» درست بود';
+      fM.style.color='#2b7a0b';
+      var total=fG.querySelectorAll('.card').length+fS_.querySelectorAll('.card').length;
+      if(total===8){fM.textContent='🎉 آفرین! همه درست شد';}
+    };
+  })(zsF[i]);
+}
+function resetF(){
+  fG.innerHTML='';fS_.innerHTML='';fP.innerHTML='';
+  var arr=['moz','ananas','khorma','anbe','sib','golabi','holu','gilas'];
+  for(var i=0;i<arr.length;i++){addF(arr[i]);}
+  updP(fP);selF=null;fM.textContent='یک کارت انتخاب کن';fM.style.color='#2b5a1e';
+}
+document.getElementById('fR').onclick=resetF;
+resetF();
+</script>
+</body>
+</html>
